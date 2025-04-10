@@ -37,7 +37,7 @@ void getAppDir(char *buff, int type)
 
   char prefix[PATH_MAX];
 
-  char *prefixEnv = getenv("LWP_PREFIX");
+  char *prefixEnv = getenv("CMAKE_INSTALL_PREFIX");
   strcpy(prefix, prefixEnv ? prefixEnv : DEFAULT_LINUX_PREFIX);
 
 #endif
