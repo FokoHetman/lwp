@@ -125,7 +125,7 @@ void saveAppConfig(AppConfig* ac)
   char path[PATH_MAX];
   getAppCfgPath(path);
 
-  printf("ffs: %s and %s", path, name);
+  printf("ffs: %s and %s", path);
   if (!config_write_file(&cfg, path))
   {
     fprintf(stderr, "Error while writing file.\n");
