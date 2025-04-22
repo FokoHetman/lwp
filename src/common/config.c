@@ -42,6 +42,7 @@ void saveMonitorConfig(const char* name, MonitorConfig* mc)
   char path[PATH_MAX];
   getMonitorCfgPath(path, name);
 
+  printf("%s and %s", path, name);
   if (!config_write_file(&cfg, path))
   {
     fprintf(stderr, "Error while writing file.\n");
@@ -124,6 +125,7 @@ void saveAppConfig(AppConfig* ac)
   char path[PATH_MAX];
   getAppCfgPath(path);
 
+  printf("ffs: %s and %s", path, name);
   if (!config_write_file(&cfg, path))
   {
     fprintf(stderr, "Error while writing file.\n");
