@@ -14,13 +14,14 @@ void createUserDirs()
 #endif
 
   char path[PATH_MAX];
+  char path2[PATH_MAX];
 
-  getAppDir(path, APP_DIR_USER_SETTINGS);
-  sprintf(path, format, path, "wallpapers");
+  getAppDir(path2, APP_DIR_USER_SETTINGS);
+  sprintf(path, format, path2, "wallpapers");
   g_mkdir_with_parents(path, 484);
 
-  getAppDir(path, APP_DIR_USER_SETTINGS);
-  sprintf(path, format, path, "monitors");
+  getAppDir(path2, APP_DIR_USER_SETTINGS);
+  sprintf(path, format, path2, "monitors");
   g_mkdir_with_parents(path, 484);
 }
 
