@@ -71,7 +71,8 @@ void getAppDir(char *buff, int type)
 
 void getMonitorCfgPath(char *buff, const char *name)
 {
-  getAppDir(buff, APP_DIR_USER_SETTINGS);
+  char buff2[PATH_MAX];
+  getAppDir(buff2, APP_DIR_USER_SETTINGS);
 
 #ifdef __WIN32
   const char *format = "%s\\monitors\\%s.cfg";
@@ -79,7 +80,8 @@ void getMonitorCfgPath(char *buff, const char *name)
   const char *format = "%s/monitors/%s.cfg";
 #endif
 
-  sprintf(buff, format, buff, name);
+  
+  sprintf(buff, format, buff2, name);
 }
 
 void getWlpCfgPath(char *buff, const char *dirPath)
@@ -95,7 +97,8 @@ void getWlpCfgPath(char *buff, const char *dirPath)
 
 void getAppCfgPath(char *buff)
 {
-  getAppDir(buff, APP_DIR_USER_SETTINGS);
+  char buff2[PATH_MAX];
+  getAppDir(buff2, APP_DIR_USER_SETTINGS);
 
 #ifdef __WIN32
   const char *format = "%s\\lwp.cfg";
@@ -103,12 +106,13 @@ void getAppCfgPath(char *buff)
   const char *format = "%s/lwp.cfg";
 #endif
 
-  sprintf(buff, format, buff);
+  sprintf(buff, format, buff2);
 }
 
 void getLogPath(char *buff)
 {
-  getAppDir(buff, APP_DIR_USER_SETTINGS);
+  char buff2[PATH_MAX];
+  getAppDir(buff2, APP_DIR_USER_SETTINGS);
 
 #ifdef __WIN32
   const char *format = "%s\\log.txt";
@@ -116,5 +120,5 @@ void getLogPath(char *buff)
   const char *format = "%s/log";
 #endif
 
-  sprintf(buff, format, buff);
+  sprintf(buff, format, buff2);
 }
